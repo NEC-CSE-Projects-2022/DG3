@@ -1,8 +1,8 @@
-Here is your **fully filled README content** based on your paper *“Leveraging Operational and Environmental Data for Train Delay Prediction via Deep Learning Models”*:
 
 ---
 
-# Team 47 – Train Delay Prediction Using Deep Learning
+# Team 47 – Leveraging Operational and Environmental Data for Train Delay Prediction via Deep Learning Models
+
 
 ## Team Info
 
@@ -29,7 +29,7 @@ This project focuses on predicting train delays using deep learning techniques a
 ## Paper Reference (Inspiration)
 
 👉 **[Leveraging Operational and Environmental Data for Train Delay Prediction via Deep Learning Models
-– Rama Krishna Eluri, Kotha Lahari, Appala Chandana Priya, Yarroju Rekha Sri, Dharmapuri Siri, Kandukuri Swarnalatha](Add DOI/Conference Link Here)**
+– Rama Krishna Eluri, Kotha Lahari, Appala Chandana Priya, Yarroju Rekha Sri, Dharmapuri Siri, Kandukuri Swarnalatha]**
 Original IEEE-style research paper used as inspiration for the model.
 
 ---
