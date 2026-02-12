@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procedure</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Leveraging Operational and Environmental Data for Train Delay Prediction via Deep Learning Models</h1>
+  <p class="credits">By: K. Lahari, A. Chandana Priya , Y. Rekha Sri | Guide: Rama Krishna Eluri</p>
+</header>
+
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Project</a></li>
+    <li><a href="objectives.html"><i class="fas fa-bullseye"></i> Objectives</a></li>
+    <li class="active"><a href="procedure.html"><i class="fas fa-cogs"></i> Procedure</a></li>
+    <li><a href="result.html"><i class="fas fa-chart-line"></i> Prediction</a></li>
+    <li class="active"></li>
+        <!-- LOGOUT BUTTON -->
+    <li style="float:right;"><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+
+  </ul>
+</nav>
+
+<main>
+<section class="procedure-wrapper">
+  <div class="procedure-image">
+    <img src="blockdiagram.jpg" alt="Block Diagram">
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-step">
+      <div class="circle">1</div>
+      <div class="content"><h3>Data Collection</h3><p>Collect operational and environmental railway data.</p></div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="circle">2</div>
+      <div class="content"><h3>Data Preprocessing</h3><p>Handle missing values, encode labels, scale features.</p></div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="circle">3</div>
+      <div class="content"><h3>Model Development</h3><p>Implement DNN, CNN, LSTM, BiLSTM architectures.</p></div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="circle">4</div>
+      <div class="content"><h3>Model Evaluation</h3><p>Compare using R², RMSE, MAE, and sMAPE.</p></div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="circle">5</div>
+      <div class="content"><h3>Results</h3><p>BiLSTM outperforms all other models.</p></div>
+    </div>
+
+  </div>
+</section>
+</main>
+<script>
+// Check Login Status
+if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html"; // if not logged in → go to login
+}
+
+// Logout Function
+document.getElementById("logoutBtn").addEventListener("click", function() {
+    localStorage.removeItem("loggedIn");
+    alert("Logged out successfully!");
+    window.location.href = "login.html";
+});
+</script>
+
+
+</body>
+</html>

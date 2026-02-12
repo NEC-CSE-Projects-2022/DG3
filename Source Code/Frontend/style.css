@@ -1,0 +1,852 @@
+/* ======================= GLOBAL STYLES ======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+html,body {
+  background: linear-gradient(135deg, #ffd6a5, #c1fba4, #cfa5a7, #9ecfff);
+  background-size: 400% 400%;
+  color: #333;
+  line-height: 1.6;
+  animation: gradientShift 10s ease infinite;
+  height: 100%;
+  margin: 0;
+}
+
+
+/* ======================= ANIMATIONS ======================= */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ======================= HEADER ======================= */
+.header {
+  text-align: center;
+  padding: 25px 20px;
+  background: linear-gradient(90deg, #a0c4ff, #ffc6ff);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.header h1 {
+  font-size: 22px;
+  color: #222;
+}
+
+.header .credits {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #101010;
+}
+
+/* ======================= NAVBAR ======================= */
+.navbar {
+  background-color: #e8e8e8;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar ul li {
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin: 5px;
+  animation: fadeSlide 0.6s ease forwards;
+}
+
+.navbar ul li a {
+  display: block;
+  padding: 12px 22px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #222;
+  transform: translateY(-3px) scale(1.03);
+  background: rgba(255, 182, 193, 0.4);
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+  border-radius: 6px;
+}
+
+.navbar ul li a.active {
+  background: #ffb3c1;
+  color: #222;
+  box-shadow: 0 4px 10px rgba(255, 153, 170, 0.5);
+  transform: translateY(-2px);
+  border-radius: 6px;
+}
+
+
+/* ======================= MAIN CONTENT ======================= */
+main {
+  padding: 30px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ======================= HOME SECTION ======================= */
+.home-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.home-text {
+  flex: 1;
+  max-width: 45%;
+}
+
+.home-text h2 {
+  font-size: 2.2rem;
+  color: #6c5ce7;
+}
+
+.home-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #141313;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.home-video {
+  flex: 1;
+  width: 45%;
+  height: 80vh;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease;
+}
+
+.home-video:hover {
+  transform: scale(1.02);
+}
+
+/* ======================= ABOUT SECTION ======================= */
+.about-section {
+  padding: 60px 20px;
+  background: #f9f8f6;
+  border-radius: 15px;
+  margin: 30px 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #6c5ce7;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* ======================= OBJECTIVES ======================= */
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #6c5ce7;
+  margin-bottom: 30px;
+}
+
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.objective-box {
+  background: #1e1e2f;
+  border-radius: 12px;
+  padding: 20px;
+  color: #e0e0e0;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.6);
+  transition: all 0.3s ease;
+}
+
+.objective-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(100, 80, 200, 0.6);
+}
+
+/* ======================= MODELS SHOWCASE ======================= */
+.models-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.model-card {
+  background: #2b2b3f;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  color: #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 1 180px;
+}
+
+.model-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 18px rgba(108, 92, 231, 0.6);
+}
+
+.model-card h4 { 
+  color: #a29bfe;
+  margin-bottom: 6px; 
+  font-size: 1rem;
+}
+
+.model-card p { 
+  color: #ccc;
+  font-size: 0.85rem;
+}
+
+/* ======================= PROCEDURE / TIMELINE ======================= */
+.procedure-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.procedure-image {
+  width: 40%;
+  height: 30%;
+}
+
+.procedure-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.timeline {
+  position: relative;
+  margin-top: 10px;
+  padding-left: 30px; /* keeps the line offset */
+  border-left: 4px solid #a29bfe;
+  animation: fadeIn 1s ease;
+}
+
+.timeline-step {
+  position: relative;
+  margin-bottom: 20px; /* reduced from 40px to 20px */
+  padding-left: 25px;
+}
+
+.timeline-step .circle {
+  position: absolute;
+  left: -48px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ffb3c1, #a0c4ff);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  animation: popIn 0.5s ease;
+}
+
+.timeline-step .content {
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-step .content:hover {
+  transform: translateX(8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.timeline-step h3 {
+  margin: 0;
+  color: #6c5ce7;
+  font-size: 0.9rem;
+}
+
+.timeline-step p {
+  margin-top: 6px;
+  color: #444;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* ======================= CARDS & FORMS ======================= */
+.card, .result-box, form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .result-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: #f9f9f9;
+  color: #333;
+  font-size: 1rem;
+}
+
+button.btn {
+  background: linear-gradient(90deg, #cb585a, #d8bc3b);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button.btn:hover {
+  background: linear-gradient(90deg, #cb585a, #d8bc3b);
+}
+
+/* Loader */
+.loader {
+  border: 4px solid #e0e0e0;
+  border-top: 4px solid #6c5ce7;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* ======================= RESULTS ======================= */
+/* Results section two-column layout */
+.result-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+
+  margin-top: 20px;
+  padding: 20px;
+  background: #eef0ff;
+  min-height: 120px;
+  border-radius: 10px;
+  border-left: 5px solid #4f46e5;
+  font-size: 16px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Each output column */
+.result-column {
+  width: 50%;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.input-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* keeps responsive on mobile */
+}
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+
+/* ===================== INPUT ROW ANIMATION ===================== */
+.input-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  animation: fadeUp 0.8s ease;
+}
+
+.input-row input {
+  padding: 12px;
+  width: 260px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  background: #ffffffaa;
+  transition: all 0.3s ease;
+}
+
+/* Input Focus Animation */
+.input-row input:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0px 0px 10px rgba(108, 92, 231, 0.4);
+  transform: scale(1.03);
+  background: #fff;
+}
+
+/* FadeUp Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================== BUTTON ANIMATION ===================== */
+.btn {
+  width: 220px;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #29ca09, #fda085);
+  color: #222;
+  font-weight: bold;
+  font-size: 17px;
+  border: none;
+  transition: all 0.3s ease;
+  animation: popIn 0.7s ease;
+}
+
+.btn:hover {
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 8px 20px rgba(17, 17, 17, 0.4);
+  background: linear-gradient(90deg, #0829e2, #ff99aa);
+}
+
+/* ===================== RESULT BOX ANIMATION ===================== */
+#resultBox {
+  animation: fadeInSlow 1s ease;
+}
+
+@keyframes fadeInSlow {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ======================= RESPONSIVE ======================= */
+@media (max-width: 900px) {
+  .about-container,
+  .procedure-wrapper,
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .procedure-image,
+  .home-video,
+  .about-image img {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .timeline {
+    margin-top: 30px;
+  }
+
+  .objectives-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .model-card {
+    flex: 0 1 45%;
+  }
+}
+
+
+/* ======================= LOGIN FORM ======================= */
+.login-container {
+  min-height: calc(100vh - 80px); /* subtract header height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login card */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 35px 30px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Title */
+.login-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+/* Button */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: #1e3c72;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background: #16305a;
+}
+
+/* ======================= INPUT FIELDS ======================= */
+.input-group {
+  width: 100%;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 20px 14px 45px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(70, 68, 68, 0.25);
+  color: #080808;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: rgba(8, 8, 8, 0.7);
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #070707;
+  font-size: 18px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Input focus animation */
+.input-group input:focus {
+  background: rgba(239, 232, 232, 0.45);
+  box-shadow: 0 0 15px rgba(21, 20, 20, 0.5);
+}
+
+/* ======================= LOGIN BUTTON ======================= */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #ff6a88, #ff99ac);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(255,105,135,0.4);
+}
+
+.btn-login:hover {
+  background: linear-gradient(90deg, #ff99ac, #ff6a88);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,105,135,0.6);
+}
+
+/* ======================= FORGOT PASSWORD ======================= */
+.forgot-password {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.forgot-password a {
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+  color: #ffd700;
+}
+
+/* ======================= RESPONSIVE ======================= */
+@media (max-width: 420px) {
+  .login-container {
+    padding: 30px 20px;
+  }
+
+  .input-group input {
+    padding: 12px 15px 12px 40px;
+  }
+}
+
+
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* ------------------ SEARCH BOX ------------------ */
+.search-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.search-box button:hover {
+  background: #0056b3;
+}
+
+/* ------------------ TABLE ------------------ */
+.table-container {
+  flex: 1; /* Make container take remaining space */
+  overflow-y: auto; /* Scroll if content exceeds height */
+  padding: 0 20px 20px 20px;
+}
+
+table {
+  width: 100%;
+  min-height: 100%; /* Fill container height */
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background: #343a40;
+  color: white;
+}
+
+/* Alternate row colors for readability */
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* ------------------ ERROR MESSAGE ------------------ */
+.error {
+  color: red;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 600px) {
+  .search-box input {
+    width: 80%;
+  }
+
+  .search-box button {
+    width: 80%;
+    margin: 10px 0 0 0;
+  }
+}
+
+
+.search-box {
+  position: relative;
+  width: 400px;
+  margin: auto;
+}
+
+#trainInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 42px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  max-height: 220px;
+  overflow-y: auto;
+  display: none;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+.prediction-box {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+input, button {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

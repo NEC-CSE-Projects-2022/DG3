@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Train Delay Prediction</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<header class="header">
+  <h1>Leveraging Operational and Environmental Data for Train Delay Prediction via Deep Learning Models</h1>
+  <p class="credits">By: K. Lahari, A. Chandana Priya , Y. Rekha Sri | Guide: Rama Krishna Eluri</p>
+</header>
+
+<nav class="navbar">
+  <ul>
+    <li class="active"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Project</a></li>
+    <li><a href="objectives.html"><i class="fas fa-bullseye"></i> Objectives</a></li>
+    <li><a href="procedure.html"><i class="fas fa-cogs"></i> Procedure</a></li>
+    <li><a href="result.html"><i class="fas fa-chart-line"></i> Prediction</a></li>
+   <li class="active"></li>
+    <li style="float:right;"><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+
+
+  </ul>
+</nav>
+
+<main>
+<section class="home-container">
+  <div class="home-text">
+    <h2>Welcome to Train Delay Prediction System</h2>
+      <p>
+       The project “Leveraging Operational and Environmental Data for Train Delay Prediction via Deep Learning Models” aims to develop a reliable and user-friendly system that accurately predicts train delays. By analyzing various factors such as past delay records, weather conditions, and route information, the system provides valuable insights that help passengers and railway authorities plan better.This model improves accuracy compared to traditional methods by using advanced deep learning techniques that can recognize hidden patterns in data. The results show that the proposed system can significantly reduce uncertainty in train schedules and enhance the overall efficiency of railway operations.
+      </p>
+  </div>
+
+  <video autoplay loop muted playsinline class="home-video">
+    <source src="home.mp4" type="video/mp4">
+  </video>
+</section>
+</main>
+
+<script>
+if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html"; 
+}
+
+
+document.getElementById("logoutBtn").addEventListener("click", function() {
+    localStorage.removeItem("loggedIn");
+    alert("Logged out successfully!");
+    window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>

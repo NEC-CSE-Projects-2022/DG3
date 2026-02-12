@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objectives</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="header">
+  <h1>Leveraging Operational and Environmental Data for Train Delay Prediction via Deep Learning Models</h1>
+  <p class="credits">By: K. Lahari, A. Chandana Priya , Y. Rekha Sri | Guide: Rama Krishna Eluri</p>
+</header>
+
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Project</a></li>
+    <li class="active"><a href="objectives.html"><i class="fas fa-bullseye"></i> Objectives</a></li>
+    <li><a href="procedure.html"><i class="fas fa-cogs"></i> Procedure</a></li>
+    <li><a href="result.html"><i class="fas fa-chart-line"></i>Prediction</a></li>
+    <li class="active"></li>
+        <!-- LOGOUT BUTTON -->
+    <li style="float:right;"><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+
+  </ul>
+</nav>
+
+<main>
+<section class="objectives-section">
+  <h2 class="section-title">🎯 Project Objectives</h2>
+
+  <div class="objectives-grid">
+    <div class="objective-box"><p>Develop a deep learning model for delay prediction.</p></div>
+    <div class="objective-box"><p>Compare DNN, CNN, LSTM, and BiLSTM performance.</p></div>
+    <div class="objective-box"><p>Preprocess, encode and scale railway data.</p></div>
+    <div class="objective-box"><p>Evaluate using RMSE, MAE, R², and sMAPE.</p></div>
+    <div class="objective-box"><p>Create a user-friendly prediction interface.</p></div>
+    <div class="objective-box"><p>Enhance railway scheduling efficiency.</p></div>
+  </div>
+
+  <h3 class="models-title">Deep Learning Models Used</h3>
+  <div class="models-showcase">
+    <div class="model-card"><h4>DNN</h4><p>Captures nonlinear interactions.</p></div>
+    <div class="model-card"><h4>CNN</h4><p>Extracts spatial/temporal features.</p></div>
+    <div class="model-card"><h4>LSTM</h4><p>Remembers long-term dependencies.</p></div>
+    <div class="model-card"><h4>BiLSTM</h4><p>Processes forward + backward data.</p></div>
+  </div>
+</section>
+</main>
+
+<script>
+if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html"; 
+}
+
+document.getElementById("logoutBtn").addEventListener("click", function() {
+    localStorage.removeItem("loggedIn");
+    alert("Logged out successfully!");
+    window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>
